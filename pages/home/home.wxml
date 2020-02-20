@@ -1,4 +1,11 @@
 <!--pages/home/home.wxml-->
-<text class="title">Hello word！</text>
-<button size="big">按钮</button>
-<view>知识点1</view>
+<!-- 1.小程序的数据绑定 {{}} ->Mustache语法 -->
+<view>Hello {{name}}</view>
+
+<!-- 列表展示 -->
+<view>{{students[0].name}}</view>
+<view wx:for="{{students}}">{{item.name}}-{{item.age}}</view>
+
+<!-- 事件监听改变data -->
+<view>当前计数:{{counter}}</view>
+<button size="mini" bindtap='onClick'>+</button>
