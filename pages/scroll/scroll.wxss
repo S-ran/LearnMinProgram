@@ -1,0 +1,14 @@
+/* pages/scroll/scroll.wxss */
+.box{
+  border: 1px solid red;
+  height: 100px;
+  white-space: nowrap;
+}
+.item{
+  display: inline-block;
+}
+.box1{
+  margin: 10px 0;
+  border: 1px solid red;
+  height: 100px;
+}

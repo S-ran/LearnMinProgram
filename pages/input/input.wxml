@@ -1,0 +1,15 @@
+<!--pages/input/input.wxml-->
+<input></input>
+<!-- 1-value默认值 -->
+<!-- 2-type决定键盘类型（text/number数字输入键盘/idcard/digit带小数点的数字键盘） -->
+<!-- 3-passwork:暗文 -->
+<!-- 4-占位符placeholder -->
+
+<!-- 5-绑定事件 -->
+<!-- bindinput键盘输入时触发
+     bindfocus输入框聚焦时触发
+     bindblur输入框失去焦点时触发 -->
+<input class="box"
+       bindinput="on"
+       bindfocus="over"
+       bindblur="off"></input>

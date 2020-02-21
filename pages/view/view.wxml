@@ -1,0 +1,15 @@
+<!--pages/view/view.wxml-->
+
+<!-- 1-view的基本使用=div -->
+<view class="box">哈哈哈</view>
+
+<!-- 2.hover-class指定按钮按下去的样式类 -->
+<!-- 3-hover-stay-time:手指松开后点击态保留时间，单位毫秒-->
+<view class="box1" hover-class="but"hover-stay-time="{{0}}">按钮</view>
+
+<!-- hover-stop-propagation:指定是否阻止本节点的祖先节点出现点击态(阻止事件冒泡) -->
+<view class="box2" hover-class="but1">
+  <view class="box2-1" hover-class="but1" hover-stop-propagation>按钮</view>
+</view>
+
+

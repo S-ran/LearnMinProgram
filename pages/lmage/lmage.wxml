@@ -1,0 +1,16 @@
+<!--pages/lmage/lmage.wxml-->
+<!-- 1.image有默认大小320*240 
+     2.image是一个行内块级元素(inline-block)-->
+
+<!-- 3.选择相册的图片 -->
+<image src="{{src}}" show-menu-by-longpress mode="aspectFit"></image>
+<button bindtap="onclick">按钮</button>    
+
+<!-- 4.bindload-监听图片加载完成 -->
+<!-- 5.lazy-load-图片懒加载，在即将进入一定范围（上下三屏）时才开始加载 -->
+<!-- 6.show-menu-by-longpress:开启长按图片显示识别小程序码菜单 -->
+<!-- 7.mode:图片裁剪、缩放的模式 -->
+<image wx:for="{{10}}"
+       src="http://img4.imgtn.bdimg.com/it/u=3580310962,3165099994&fm=26&gp=0.jpg" 
+       bindload="onload"
+       lazy-load/>

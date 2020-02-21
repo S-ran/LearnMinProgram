@@ -1,0 +1,6 @@
+/* pages/button//button.wxss */
+
+.but{
+  background: red;
+  color: white;
+}
