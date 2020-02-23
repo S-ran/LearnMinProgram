@@ -1,3 +1,3 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello word！</text>
-<button size="big">按钮</button>
+<button size="big" open-type="share">按钮</button>
