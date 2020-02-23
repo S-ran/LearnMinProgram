@@ -1,0 +1,4 @@
+<!--components/my-prop/my-prop.wxml-->
+<view class="title titleclass">我是Prop</view>
+<view class="content">我是Prop的内容{{title}}</view>
+<button bind:tap="onclick">+1</button>

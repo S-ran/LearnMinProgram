@@ -1,0 +1,2 @@
+<!--components/my-cpn/my-cpn.wxml-->
+<text class="title">我是组件</text>

@@ -1,0 +1,11 @@
+<!--components/my-shop/my-shop.wxml-->
+<view class="title">
+  <view class="tit {{isactive==index?'active':''}}"
+        wx:for="{{title}}" 
+        bindtap="onactive"
+        data-index="{{index}}"wx:key="index">
+          <text>{{item}}</text>
+        </view>
+</view>
+<view>组件内的计数------------------------{{number}}</view>
+<slider value="90"></slider>

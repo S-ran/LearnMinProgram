@@ -5,62 +5,66 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    isAction:false,
+    nowTime:new Date().toLocaleString(),
+    num:0,
+    counter:0
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  //--------------input显示或不显示---------
+  onclick(){
+    this.setData({
+      isAction:!this.data.isAction
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+  //--------------失焦清空---------
+   onclear(e) {
+      e.detail.value=''
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
+  //--------------获取时间---------
+  onLoad(){//生命
+    setInterval(() =>{
+      this.setData({
+        nowTime: new Date().toLocaleString()
+      })
+    },1000)
   },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
+//--------------改变成绩---------
+  oninput(e){ 
+    console.log(e)
+    this.setData({
+      num:e.detail.value
+    })
   },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
+  //--------------监听常用事件---------
+  o(){
+    console.log('0000')
   },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
+  onevent(e){
+    console.log(e)
   },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
+  /*******事件监听*****************/
+  j(){
+    console.log('3')
   },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  j1() {
+    console.log('2')
+  },
+  j2() {
+    console.log('1')
+  },
+  h(){
+    console.log('c')
+  },
+  h1() {
+    console.log('b')
+  },
+  h2() {
+    console.log('a')
+  },
+  //--------------接收发射的组件事件------------
+  ontap(){
+    this.setData({
+      counter:this.data.counter-1
+    })
   }
 })

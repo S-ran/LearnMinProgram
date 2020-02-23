@@ -1,3 +1,101 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello word！</text>
-<button size="big">按钮</button>
+
+<view class="box">
+  <view  class="active"
+         hidden="{{isAction}}"
+         bindtap="onclick">
+         搜索{{nowTime}}
+         </view>
+  <input class="active1"
+         placeholder="搜索"
+         hidden="{{!isAction}}" 
+         focus="{{isAction}}"
+         bindinput="oninput">
+         </input>
+  <view class="active2" hidden="{{!isAction}}" bindtap="onclick">
+        取消
+        </view>
+        <view class="cl" hidden="{{!isAction}}" bindtap="onclear">X
+        </view>
+</view>
+<button bindtap="onclick">按钮</button>
+
+<view class="{{isAction?'ap':''}}">
+              分数:{{num}}
+              <view wx:if="{{num >= 90}}">优秀</view>
+              <view wx:elif="{{num >= 80}}">良好</view>
+              <view wx:elif="{{num >= 60}}">及格</view>
+              <view wx:else>不及格</view>
+              </view>
+
+<view class="box">
+  <view  class="active"
+         wx:if="{{!isAction}}"
+         bindtap="onclick">
+         搜索{{nowTime}}
+         </view>
+  <input class="active1"
+         placeholder="搜索"
+         wx:if="{{isAction}}" 
+         focus="{{isAction}}"
+         bindinput="oninput"
+         bindblur="onclear">
+         </input>
+  <view class="active2" wx:if="{{isAction}}" bindtap="onclick">
+        取消
+        </view>
+        <view class="cl" wx:if="{{isAction}}" bindtap="onclear">X
+        </view>
+</view>
+
+<view wx:for='{{10}}' wx:for-item="nuber" wx:key="index">{{nuber}}</view>
+  <template name="compentens">
+    <view>{{message}}</view>
+  </template>
+  <template is="compentens" data="{{message:'哈哈哈'}}"/>
+
+  <wxs module="info"> 
+      var mes = "年害怕"
+      function run(x,y){
+          return x+y
+      }
+      module.exports = {
+        mes:mes,run:run
+      }
+  </wxs>
+  <view>{{info.mes}}</view>
+  <view>{{info.run(2,2)}}</view>
+
+  <view bind:touchstart=""  
+        bind:touchmove=""
+        bindtouchend=""
+        bindtap=""
+        bindlongpress="o">annanan
+        </view>
+<!-- 通过事件传参 -->
+  <view wx:for="{{['衣服','鞋子','裤衩']}}" wx:key="index"
+        bindtap="onevent"
+        data-item="{{item}}"
+        data-index="{{index}}"> {{item}}</view>
+
+<!-- 5.事件冒泡,监听和事件捕获 -->
+<!-- 冒泡：bind:事件 -->
+<!-- 监听：capture-bind:事件 -->
+<!-- 捕获：capture-catch:事件 catch：事件-->
+<view class="q" capture-bind:tap="j" bindtap="h">
+  <view class="q1" capture-bind:tap="j1" bindtap="h1">
+    <view class="q2" capture-bind:tap="j2"catch:tap="h2">
+    </view>
+  </view>
+</view>
+
+<!-- 使用组件 -->
+<text class="title">测试员</text>
+<my-cpn></my-cpn>
+
+<!-- 组件通信 -->
+<my-prop titleclass="green" bind:ontap="ontap"/>
+<my-prop title="哈哈哈" titleclass="red"/>
+<my-prop title="呵呵呵" titleclass="blue"/>
+<view>{{counter}}</view>

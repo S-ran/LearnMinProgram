@@ -1,2 +1,6 @@
 <!--pages/about/about.wxml-->
 <text>pages/about/about.wxml</text>
+<my-shop id="shop"
+         title="{{['衣服','裤子','鞋子']}}" 
+         bind:itemclick="itemclick" />
+<button size="mini" bindtap="hand">修改组件内数据</button>

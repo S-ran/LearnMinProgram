@@ -2,5 +2,11 @@
   "pages": [
     "pages/home/home",
     "pages/about/about"
-  ]
+  ],
+  "usingComponents": {
+        "my-cpn": "/components/my-cpn/my-cpn",
+        "my-prop": "/components/my-prop/my-prop",
+        "my-shop": "/components/my-shop/my-shop"
+   },
+  "sitemapLocation": "sitemap33.json"
 }
