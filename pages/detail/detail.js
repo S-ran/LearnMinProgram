@@ -1,22 +1,18 @@
-// pages/home/home.js
+// pages/detail/detail.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    name:'哈哈'
+
   },
-  ontap(){
-    wx.navigateTo({
-      url: '/pages/detail/detail?name=zhngsan',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      console.log(options)
   },
 
   /**
@@ -44,9 +40,21 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    console.log('页面推出')
+    //1.获取首页对象:getCurrentPages返回当前所有活跃的页面
+   const pages =  getCurrentPages()
+    const home = pages[pages.length-2]
 
+    //调用页面对象的setData
+    home.setData({
+      name:'hehehe'
+    })
   },
-
+  ontap(){
+    wx.navigateBack({
+      delta:1
+    })
+  },
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

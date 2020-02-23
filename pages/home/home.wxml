@@ -1,3 +1,15 @@
 <!--pages/home/home.wxml-->
 <text class="title">Hello word！</text>
 <button size="big">按钮</button>
+<!-- 1.navigator页面跳转 -->
+<navigator url='/pages/detail/detail?name=zhngsan'>跳到详情页</navigator>
+
+<!-- 2.navigator属性：open-type -->
+<navigator url='/pages/detail/detail?name=zhngsan' 
+           open-type="navigate"
+           hover-stay-time='0'>
+           跳到详情页
+           </navigator>
+<navigator url='/pages/about/about' open-type="switchTab">跳到关于页</navigator>
+<button size="mini" bindtap='ontap'>按钮</button>
+<view>{{name}}</view>
